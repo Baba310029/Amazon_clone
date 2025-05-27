@@ -134,9 +134,14 @@ body {
 
 @media (min-width: 1108px) {
     .innerSectionImg111 {
-        height: clamp(0rem, 15.7vw, 11rem);
+        height: 15.9vw;
 
     }
+}
+
+.innerSectionImg911 {
+    height: 14.5vw;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -148,12 +153,17 @@ body {
     .innerSectionImg111 {
         height: 8.4rem; 
     }
+
+    .innerSectionImg911 {
+        height: 8.4rem; 
+    }
 }
 
 .innerSectionImg211 {
     height: 15.8vw;
     width: 100%;
 }
+
 
 @media (min-width: 1200px) {
     .innerSectionImg211 {
@@ -198,12 +208,12 @@ body {
 .innerSectionImg32 {
     display: flex;
     gap: 0.3vw;
-    margin-bottom: 2.7vw;
+    margin-bottom: clamp(0.4rem, 3vw, 10rem);
 }
 
 .innerSectionImg312 {
     width: 100%;
-    height: clamp(3rem, 9vw, 10rem);
+    height: clamp(0rem, 9vw, 10rem);
 }
 
 .diffShoppingImges {
@@ -211,7 +221,7 @@ body {
     width: 100%;
 }
 
-@media (min-width: 1108px) {
+/* @media (min-width: 1108px) {
     .innerSectionImg311 {
         height: 13rem;
     }
@@ -219,7 +229,7 @@ body {
     .innerSectionImg312 {
         height: 6rem;
     }
-}
+} */
 
 @media (min-width: 1200px) {
     .innerSectionImg311 {
