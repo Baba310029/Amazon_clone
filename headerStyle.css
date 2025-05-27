@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.smallFont {
+    font-weight: 548; 
+    font-size: clamp(0rem, 1.08vw, 0.7rem); 
+    color: white;
+}
+
+.mediumFont {
+    font-weight: 547;
+    font-size: clamp(0rem, 1.4vw, 0.9rem);
+}
+
+.largeFont {
+    font-weight: bold; 
+    font-size: clamp(0rem, 1.2vw, 0.9rem);
+    color: white;
+}
+
+.border {
+    border: 0.07rem solid transparent;
+    border-radius: 0.15rem;
+}
+
+.border:hover {
+    border-color: white;
+    padding-top: 0.2vw;
+} 
+
+.navbar {
+    height: clamp(1rem, 6vw, 3.8rem);
+    width: 100%;
+    display: flex;
+    gap: 0.3%;
+    background-color: #051226;
+    padding: 0.1vw 0.8vw;
+}
+
+.headerItems {
+    padding: 2px;
+    height: 100%;
+    width: fit-content;
+    color: white;
+}
+
+#navLogo {
+    display: flex;
+    align-items: center;
+}
+
+.innerNavLogo {
+    aspect-ratio: 3.6 / 1;
+    width: clamp(1rem, 12vw, 7rem);
+    background-image: url("headerItems/amazonLogo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#navLocation {
+    display: flex;
+    align-items: center;
+    padding-left: clamp(0rem, 0.5vw, 0.4rem);
+    padding-right: clamp(0rem, 0.5vw, 0.4rem);
+}
+
+.locLogo {
+    aspect-ratio: 1 / 1.7;
+    width: clamp(0.4rem, 1.5vw, 1rem);
+    background-image: url("headerItems/navLocation1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.locAddr {
+    width: fit-content;
+    height: fit-content;
+    padding-left: clamp(0rem, 0.3vw, 0.2rem);
+}
+
+#navSearch {
+    flex: 1 1 auto;
+    display: flex;
+    padding: clamp(0rem, 0.7vw, 0.5rem) clamp(0rem, 1.2vw, 1.2rem);
+}
+
+.navLeft {
+    padding: 0 0.1vw;
+    border-top-left-radius: clamp(0rem, 0.4vw, 0.3rem);
+    border-bottom-left-radius: clamp(0rem, 0.4vw, 0.3rem);
+    width: clamp(0rem, 7vw, 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #d7d6d6;
+}
+
+.searchLeftDownArrow {
+    color: rgb(94, 94, 94);
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.navLeft p {
+    color: rgb(94, 94, 94);
+}
+
+.navFill {
+    width: 100%;
+    display: flex;
+}
+
+.navFill input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 0.5rem;
+    font-size: clamp(0rem, 1.5vw, 1rem);
+    font-weight: 540;
+    border: none;
+}
+
+.navRight {
+    width: clamp(0rem, 5.4vw, 3.2rem);
+    border-top-right-radius: clamp(0rem, 0.4vw, 0.3rem);
+    border-bottom-right-radius: clamp(0rem, 0.4vw, 0.3rem);
+    background-color: #fcb34d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-magnifying-glass {
+    color: #383b3b;
+    font-size: clamp(0rem, 2vw, 1.3rem);
+}
+
+#navLang {
+    display: flex;
+    padding: 0 clamp(0rem, 0.15vw, 0.2rem);
+}
+
+.navLangFirst {
+    display: flex;
+    align-items: center;
+    padding-top: clamp(0rem, 1vw, 2.5rem);
+}
+
+.navLangLogo {
+    background-image: url(headerItems/us_flag.jpeg);
+    height: clamp(0rem, 1.5vw, 1.3rem);
+    width: clamp(0rem, 2vw, 1.5rem);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navLangSwitch {
+    font-size: clamp(0rem, 1.3vw, 0.8rem);
+    flex-shrink: 1;
+    padding: 0 clamp(0rem, 0.3vw, 0.2rem);
+    color: white;
+}
+
+.downArrow {
+    padding-top: clamp(0rem, 1vw, 1rem);
+    color: gray;
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+#navLang button, .navLeft button{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 2;
+}
+
+#navSignin {
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(0rem, 0.25vw, 0.35rem);
+}
+
+.navSigninFirst {
+    border: 2px solid black;
+}
+
+#navSignin button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 2;
+}
+
+#navCart {
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(0rem, 0.25vw, 0.35rem);
+}
+
+.navCartFirstBlock {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: clamp(0rem, 1vw, 0.5rem);
+}
+
+.navCartLogo {
+    height: clamp(0rem, 2.7vw, 2rem);
+    width: clamp(0rem, 3.5vw, 2.5rem);
+    background-image: url(headerItems/cart_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.navCartItems {
+    top: clamp(0rem, 1.5vw, 0.8rem);
+    position: absolute;
+    padding-left: clamp(0rem, 0.2vw, 0.3rem);
+    width: clamp(0rem, 3.5vw, 2.5rem);
+    text-align: center;
+    font-weight: 750; 
+    font-size: clamp(0rem, 1.7vw, 1.1rem);
+    color: #f08804;
+}
+
+@media (max-width: 1024px) {
+    #navCart p {
+      display: none;
+    }
+    .navCartItems {
+        padding-left: clamp(0rem, 0.4vw, 0.4rem);
+    }
+}
+
+.navbarPanel {
+    width: 100%;
+    height: clamp(0.2rem, 4.1vw, 2.4rem);
+    display: flex;
+    background-color: #0b293c;
+    align-items: center;
+    color: white;
+}
+
+.fa-bars {
+    font-size: clamp(0rem, 1.3vw, 1.1rem);
+}
+
+.innerPanelSelect {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 clamp(0rem, 0.5vw, 0.8rem);
+}
+
+.innerPanelOption {
+    color: white;
+    display: flex;
+    height: 100%;
+    width: clamp(0rem, 60vw, 38rem);
+    align-items: center;
+    padding-left: 0.8vw;
+    justify-content: space-between;
+}
+
+.innerPanelOption p {
+    height: clamp(0.2rem, 4vw, 2.1rem);
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(0rem, 0.4vw, 0.6rem);
+}

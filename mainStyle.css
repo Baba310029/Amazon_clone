@@ -1,0 +1,269 @@
+body {
+    background-color: #e3e6e6;
+}
+
+
+.outerMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    max-width: 1515px;
+    height: clamp(8rem, 50vw, 38rem);
+    background-image: url("mainItems/banner01.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.mainOverlay {
+    position: absolute;
+    height: clamp(8rem, 50vw, 38rem);
+    width: 100%;
+    max-width: 1515px;
+    background: linear-gradient(to bottom, transparent 50%, #FFD814, #e3e6e6);
+}
+
+.mainBanner {
+    position: relative;
+    padding: 0 1.5vw;
+    height: auto;
+    width: 100%;
+    max-width: 1515px;
+    padding-top: clamp(0rem, 22vw, 16rem);
+}
+
+.bannerText {
+    height: clamp(0.2rem,3.5vw, 2.5rem);
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerText p {
+    color: black;
+    font-weight: 500; 
+    font-size: clamp(0rem, 1.2vw, 0.9rem);
+}
+
+.bannerText a {
+    color: #007185;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+  
+.bannerText a:hover {
+    color: #003c46;
+    text-decoration: underline;
+}
+
+.shoppingSection {
+    padding-top: 1.4vw;
+    display: grid;
+    gap: clamp(0rem, 1.3vw, 1.9rem);
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.shoppingSection1 {
+    background-color: white;
+    width: 100%;
+    height: 41vw;
+    margin: 0 auto;
+    padding: clamp(0rem, 2vw, 2rem);
+}
+
+.potsFont {
+    width: 72px;
+    white-space: nowrap;   
+    text-overflow: ellipsis;   
+    overflow: hidden;             
+}
+
+@media (min-width: 1200px) {
+    .shoppingSection {
+      grid-template-columns: repeat(4, 1fr);
+
+    }
+    .shoppingSection1 {
+        height: 420px;
+    }
+
+}
+
+.shoppingSectionUpperFont {
+    font-weight: bold;
+    font-size: clamp(0rem, 1.9vw, 1.3rem);
+}
+
+.shoppingSectionMediumFont {
+    font-weight: 540;
+    font-size: clamp(0rem, 1.2vw, 0.9rem); 
+
+}
+
+.shoppingSectionLowerFont {
+    font-weight: 520;
+    font-size: clamp(0rem, 1.08vw, 0.7rem); 
+}
+
+.innerSectionImg1 {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.innerSectionImg11 {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.innerSectionImg111 {
+    height: 14.5vw;
+    width: 100%;
+}
+
+.shoppingImges {
+    height: 70%;
+    width: 100%;
+}
+
+@media (min-width: 1108px) {
+    .innerSectionImg111 {
+        height: clamp(0rem, 15.7vw, 11rem);
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .innerSectionImg1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .innerSectionImg111 {
+        height: 8.4rem; 
+    }
+}
+
+.innerSectionImg211 {
+    height: 15.8vw;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .innerSectionImg211 {
+        height: 9.3rem;
+    }
+
+    .shoppingSection9 {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .extraSlot {
+        display: none;
+    }
+}
+
+.innerSectionTotalImg {
+    background-size: cover;
+    background-position: center;
+    margin-top: 1vw;
+    margin-bottom: 2.7vw;
+    height: 79%;
+}
+
+@media (min-width: 1200px) {
+    .innerSectionTotalImg {
+        margin-bottom: clamp(0rem, 2.5vw, 1.6rem);
+    }
+}
+
+.innerSectionImg311 {
+    height: 18vw;
+    width: 100%;
+}
+
+.diffShoppingImge311 {
+    height: 80%;
+    width: 100%;
+}
+
+.innerSectionImg32 {
+    display: flex;
+    gap: 0.3vw;
+    margin-bottom: 2.7vw;
+}
+
+.innerSectionImg312 {
+    width: 100%;
+    height: clamp(3rem, 9vw, 10rem);
+}
+
+.diffShoppingImges {
+    height: 90%;
+    width: 100%;
+}
+
+@media (min-width: 1108px) {
+    .innerSectionImg311 {
+        height: 13rem;
+    }
+
+    .innerSectionImg312 {
+        height: 6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .innerSectionImg311 {
+        height: 11rem; 
+    }
+
+    .innerSectionImg32 {
+        margin-bottom: 2rem;
+    }
+
+    .innerSectionImg312 {
+        height: 5rem;
+    }
+}
+
+
+.scrollShopping {
+    background-color: white;
+    width: 100%;
+    height: clamp(0rem, 28vw, 16rem);
+    margin-top: 1.3vw;
+    padding: clamp(0rem, 2vw, 2rem);
+}
+
+.ShoppingImageScroll {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: clamp(0rem, 1.1vw, 0.8rem);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.ShoppingImageScroll::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+}
+
+.scrollInnerImg {
+    max-width: clamp(0rem, 20vw, 11rem);
+}
+
+.scrollInnerImg2 {
+    max-height: clamp(0rem, 20vw, 11rem);
+}
