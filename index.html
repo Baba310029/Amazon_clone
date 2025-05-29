@@ -27,12 +27,16 @@
                     <p class="smallFont">All</p>
                     <button><i class="fa fa-caret-down searchLeftDownArrow"></i></button>
                 </div>
-                <div class="navFill">
-                    <input placeholder="Search Amazon"/>
-                </div>
-                <div class="navRight">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+                <form class="itemSearch">
+                    <div class="navFill">
+                        <input class="searchInput" name="q" type="text" placeholder="Search Amazon"/>
+                    </div>
+                    <div class="navRight">
+                        <button type="submit" style="background:none; border:none; cursor:pointer;">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
             <div class="navItems border" id="navLang">
                 <div class="navLangFirst">
@@ -73,6 +77,7 @@
                 </div>
                 <div class="mediumFont border"><p >Today's Deals</p></div>
                 <div class="mediumFont border"><p >Prime video</p></div>
+                <div class="mediumFont border"><p >Buy Again</p></div>
                 <div class="mediumFont border"><p >Registry</p></div>
                 <div class="mediumFont border"><p >Customer Service</p></div>
                 <div class="mediumFont border"><p >Gift Cards</p></div>
@@ -81,11 +86,25 @@
         
         </div>
     </header>
-    <div class="outerMain"  >
+    <div class="outerMain">
         <div class="main">
             <div class="mainOverlay"></div>
-        </div>
-        <div class="mainBanner">
+        </div> 
+        <div class="mainBanner"> 
+            <div class="mainArrowSwitch">
+                <div class="mainArrows">
+                     <svg width="3vw" height="5vw" viewBox="0 0 24 24">
+                        <polyline points="16 4 8 12 16 20" fill="none" stroke="black" stroke-width="0.7"/>
+                    </svg>
+
+                </div>
+                <div class="mainArrows">
+                    <svg width="3vw" height="5vw" viewBox="0 0 24 24">
+                        <polyline points="8 4 16 12 8 20" fill="none" stroke="black" stroke-width="0.7"/>
+                    </svg>
+
+                </div>
+            </div>
             <div class="bannerText">
                 <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a style="color: #2162A1;">Click here to go to amazon.in</a></p>
             </div>
@@ -686,6 +705,10 @@
                     <img src="scrollImages/imgs25.jpg" class="scrollInnerImg2">
                 </div>
             </div>
+        </div> 
+        <div class="searchPage">
+            <div class="result"></div>
+            <div class="searchProductDisplay"></div>
         </div>
     </div>
     <footer>
@@ -926,5 +949,6 @@
             <p class="footerMediumFont">© 1996-2025, Amazon.com, Inc. or its affiliates</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -101,6 +101,11 @@
     background-color: #d7d6d6;
 }
 
+.itemSearch {
+    display: flex;
+    width: 100%;
+}
+
 .searchLeftDownArrow {
     color: rgb(94, 94, 94);
     font-size: clamp(0.5rem, 1vw, 0.8rem);
@@ -257,22 +262,21 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: clamp(0rem, 0.5vw, 0.8rem);
+    gap: clamp(0rem, 0.5vw, 0.2rem);
 }
 
 .innerPanelOption {
     color: white;
     display: flex;
     height: 100%;
-    width: clamp(0rem, 60vw, 60rem);
     align-items: center;
-    padding-left: 0.8vw;
-    justify-content: space-between;
+    padding-left: 1vw;
+    gap: clamp(0rem, 1.5vw, 1.8rem);
+
 }
 
 .innerPanelOption p {
     height: clamp(0.2rem, 4vw, 2.1rem);
     display: flex;
     align-items: center;
-    padding: 0 clamp(0rem, 0.4vw, 0.6rem);
 }

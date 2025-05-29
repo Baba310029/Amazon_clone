@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Amazon Basics USB Condenser Microphone for Streaming...",
+    "image": "products/product01",
+    "reviews": 293,
+    "price": "$29.02",
+    "oldPrice": "$31.79",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Logitech C920x HD Pro Webcam for Video Calling and Recording",
+    "image": "products/product02",
+    "reviews": 1204,
+    "price": "$59.99",
+    "oldPrice": "$69.99",
+    "deliveryDate": "Thu, Jun 12",
+    "shipTo": "India"
+  },
+  {
+    "name": "Redragon K552 Mechanical Gaming Keyboard, RGB LED Backlit",
+    "image": "products/product03",
+    "reviews": 2143,
+    "price": "$39.99",
+    "oldPrice": "$49.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  },
+  {
+    "name": "Razer DeathAdder Essential Gaming Mouse - 6400 DPI Optical Sensor",
+    "image": "products/product04",
+    "reviews": 1843,
+    "price": "$29.99",
+    "oldPrice": "$39.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Sony WH-CH520 Wireless Bluetooth Headphones with Mic",
+    "image": "products/product05",
+    "reviews": 1023,
+    "price": "$49.90",
+    "oldPrice": "$59.90",
+    "deliveryDate": "Sun, Jun 15",
+    "shipTo": "India"
+  },
+  {
+    "name": "Anker PowerCore 10000 Portable Charger, Ultra-Compact Battery Pack",
+    "image": "products/product06",
+    "reviews": 3056,
+    "price": "$24.99",
+    "oldPrice": "$27.99",
+    "deliveryDate": "Wed, Jun 11",
+    "shipTo": "India"
+  },
+  {
+    "name": "TP-Link AC750 WiFi Extender, Covers Up to 1200 Sq.ft",
+    "image": "products/product07",
+    "reviews": 4398,
+    "price": "$18.99",
+    "oldPrice": "$24.99",
+    "deliveryDate": "Mon, Jun 16",
+    "shipTo": "India"
+  },
+  {
+    "name": "Samsung 870 EVO 1TB SSD Internal Solid State Drive",
+    "image": "products/product08",
+    "reviews": 5211,
+    "price": "$79.99",
+    "oldPrice": "$99.99",
+    "deliveryDate": "Tue, Jun 17",
+    "shipTo": "India"
+  },
+  {
+    "name": "Acer 23.8\" Full HD IPS Zero Frame Monitor with HDMI & VGA Ports",
+    "image": "products/product09",
+    "reviews": 1610,
+    "price": "$99.99",
+    "oldPrice": "$119.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Echo Dot (5th Gen) with Clock and Alexa - Smart Speaker",
+    "image": "products/product10",
+    "reviews": 7110,
+    "price": "$49.99",
+    "oldPrice": "$59.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  },
+  {
+    "name": "Amazon Basics USB Condenser Microphone for Streaming...",
+    "image": "products/product11",
+    "reviews": 293,
+    "price": "$29.02",
+    "oldPrice": "$31.79",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Logitech C920x HD Pro Webcam for Video Calling and Recording",
+    "image": "products/product12",
+    "reviews": 1204,
+    "price": "$59.99",
+    "oldPrice": "$69.99",
+    "deliveryDate": "Thu, Jun 12",
+    "shipTo": "India"
+  },
+  {
+    "name": "Redragon K552 Mechanical Gaming Keyboard, RGB LED Backlit",
+    "image": "products/product13",
+    "reviews": 2143,
+    "price": "$39.99",
+    "oldPrice": "$49.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  },
+  {
+    "name": "Razer DeathAdder Essential Gaming Mouse - 6400 DPI Optical Sensor",
+    "image": "products/product14",
+    "reviews": 1843,
+    "price": "$29.99",
+    "oldPrice": "$39.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Sony WH-CH520 Wireless Bluetooth Headphones with Mic",
+    "image": "products/product15",
+    "reviews": 1023,
+    "price": "$49.90",
+    "oldPrice": "$59.90",
+    "deliveryDate": "Sun, Jun 15",
+    "shipTo": "India"
+  },
+  {
+    "name": "Anker PowerCore 10000 Portable Charger, Ultra-Compact Battery Pack",
+    "image": "products/product16",
+    "reviews": 3056,
+    "price": "$24.99",
+    "oldPrice": "$27.99",
+    "deliveryDate": "Wed, Jun 11",
+    "shipTo": "India"
+  },
+  {
+    "name": "TP-Link AC750 WiFi Extender, Covers Up to 1200 Sq.ft",
+    "image": "products/product04",
+    "reviews": 4398,
+    "price": "$18.99",
+    "oldPrice": "$24.99",
+    "deliveryDate": "Mon, Jun 16",
+    "shipTo": "India"
+  },
+  {
+    "name": "Samsung 870 EVO 1TB SSD Internal Solid State Drive",
+    "image": "products/product18",
+    "reviews": 5211,
+    "price": "$79.99",
+    "oldPrice": "$99.99",
+    "deliveryDate": "Tue, Jun 17",
+    "shipTo": "India"
+  },
+  {
+    "name": "Acer 23.8\" Full HD IPS Zero Frame Monitor with HDMI & VGA Ports",
+    "image": "products/product19",
+    "reviews": 1610,
+    "price": "$99.99",
+    "oldPrice": "$119.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Echo Dot (5th Gen) with Clock and Alexa - Smart Speaker",
+    "image": "products/product20",
+    "reviews": 7110,
+    "price": "$419.99",
+    "oldPrice": "$59.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  },
+   {
+    "name": "Amazon Basics USB Condenser Microphone for Streaming...",
+    "image": "products/product21",
+    "reviews": 293,
+    "price": "$291.02",
+    "oldPrice": "$31.79",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Logitech C920x HD Pro Webcam for Video Calling and Recording",
+    "image": "products/product22",
+    "reviews": 1204,
+    "price": "$159.99",
+    "oldPrice": "$69.99",
+    "deliveryDate": "Thu, Jun 12",
+    "shipTo": "India"
+  },
+  {
+    "name": "Redragon K552 Mechanical Gaming Keyboard, RGB LED Backlit",
+    "image": "products/product23",
+    "reviews": 2143,
+    "price": "$349.99",
+    "oldPrice": "$49.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  },
+  {
+    "name": "Razer DeathAdder Essential Gaming Mouse - 6400 DPI Optical Sensor",
+    "image": "products/product24",
+    "reviews": 1843,
+    "price": "$29.99",
+    "oldPrice": "$19.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Sony WH-CH520 Wireless Bluetooth Headphones with Mic",
+    "image": "products/product25",
+    "reviews": 1023,
+    "price": "$29.90",
+    "oldPrice": "$59.90",
+    "deliveryDate": "Sun, Jun 15",
+    "shipTo": "India"
+  },
+  {
+    "name": "Anker PowerCore 10000 Portable Charger, Ultra-Compact Battery Pack",
+    "image": "products/product26",
+    "reviews": 3056,
+    "price": "$34.99",
+    "oldPrice": "$27.99",
+    "deliveryDate": "Wed, Jun 11",
+    "shipTo": "India"
+  },
+  {
+    "name": "TP-Link AC750 WiFi Extender, Covers Up to 1200 Sq.ft",
+    "image": "products/product27",
+    "reviews": 4398,
+    "price": "$98.99",
+    "oldPrice": "$224.99",
+    "deliveryDate": "Mon, Jun 16",
+    "shipTo": "India"
+  },
+  {
+    "name": "Samsung 870 EVO 1TB SSD Internal Solid State Drive",
+    "image": "products/product28",
+    "reviews": 5211,
+    "price": "$719.99",
+    "oldPrice": "$199.99",
+    "deliveryDate": "Tue, Jun 17",
+    "shipTo": "India"
+  },
+  {
+    "name": "Acer 23.8\" Full HD IPS Zero Frame Monitor with HDMI & VGA Ports",
+    "image": "products/product29",
+    "reviews": 1610,
+    "price": "$929.99",
+    "oldPrice": "$119.99",
+    "deliveryDate": "Fri, Jun 13",
+    "shipTo": "India"
+  },
+  {
+    "name": "Echo Dot (5th Gen) with Clock and Alexa - Smart Speaker",
+    "image": "products/product30",
+    "reviews": 7110,
+    "price": "$492.99",
+    "oldPrice": "$59.99",
+    "deliveryDate": "Sat, Jun 14",
+    "shipTo": "India"
+  }
+]

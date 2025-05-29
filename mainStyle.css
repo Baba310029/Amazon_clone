@@ -14,7 +14,6 @@ body {
     width: 100%;
     max-width: 1515px;
     height: clamp(8rem, 50vw, 38rem);
-    background-image: url("mainItems/banner01.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -24,7 +23,6 @@ body {
     height: clamp(8rem, 50vw, 38rem);
     width: 100%;
     max-width: 1515px;
-    background: linear-gradient(to bottom, transparent 50%, #FFD814, #e3e6e6);
 }
 
 .mainBanner {
@@ -33,7 +31,29 @@ body {
     height: auto;
     width: 100%;
     max-width: 1515px;
-    padding-top: clamp(0rem, 22vw, 16rem);
+}
+
+.mainArrowSwitch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainArrows {
+    border: 2px solid transparent;
+    height: clamp(0rem, 22vw, 16rem);
+    width: clamp(0rem, 8vw, 6rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainArrows:hover {
+    border-color: rgb(230, 230, 230);
+}
+
+.mainArrows svg {
+    width: 4vw;
+    height: 6vw;
 }
 
 .bannerText {
@@ -276,4 +296,83 @@ body {
 
 .scrollInnerImg2 {
     max-height: clamp(0rem, 20vw, 11rem);
+}
+
+/*onSearch*/
+
+.ProductUpperFont {
+    color: white;
+    font-weight: 580;
+    font-size: clamp(0rem, 1.5vw, 1rem);
+}
+
+.ProductMediumFont {
+    /* font-weight: 580; */
+    font-weight: bold;
+    font-size: clamp(0rem, 1.6vw, 1.1rem); 
+}
+
+.ProductLowererFont {
+    color: rgb(59, 59, 59);
+    font-weight: 470;
+    font-size: clamp(0rem, 1.1vw, 0.9rem);
+}
+
+.searchPage {
+    height: auto;
+    width: 100%;
+    max-width: 1515px;
+    display: none;
+}
+
+.searchProductDisplay {
+    padding: 1.5vw;
+    display: grid;
+    gap: clamp(0rem, 1.3vw, 1.9rem);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 1250px) {
+    .searchProductDisplay {
+    grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    .searchProductDisplay {
+    grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.productCard {
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 0.5vw;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.innerProductCard {
+    padding: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0rem, 1vw, 0.8rem);
+}
+
+.current-price {
+    font-size: clamp(0rem, 2vw, 2rem);
+}
+
+.add-to-cart {
+    border: none;
+    width: fit-content;
+    padding: clamp(0rem, 0.8vw, 0.4rem);
+    padding-left: clamp(0rem, 1.3vw, 1rem);
+    padding-right: clamp(0rem, 1.3vw, 1rem);
+    background-color: #FFD814;
+    color: black;
+    border-radius: clamp(0rem, 2vw, 1.2rem);
+    color: orangered;
 }
