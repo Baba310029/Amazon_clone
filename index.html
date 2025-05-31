@@ -23,20 +23,22 @@
                 </div>
             </div>
             <div class="navItems" id="navSearch">
-                <div class="navLeft">
-                    <p class="smallFont">All</p>
-                    <button><i class="fa fa-caret-down searchLeftDownArrow"></i></button>
+                <div class="searchBorder">
+                    <div class="navLeft">
+                        <p class="smallFont">All</p>
+                        <button><i class="fa fa-caret-down searchLeftDownArrow"></i></button>
+                    </div>
+                    <form class="itemSearch">
+                        <div class="navFill">
+                            <input class="searchInput" name="q" type="text" placeholder="Search Amazon"/>
+                        </div>
+                        <div class="navRight">
+                            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <form class="itemSearch">
-                    <div class="navFill">
-                        <input class="searchInput" name="q" type="text" placeholder="Search Amazon"/>
-                    </div>
-                    <div class="navRight">
-                        <button type="submit" style="background:none; border:none; cursor:pointer;">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
             <div class="navItems border" id="navLang">
                 <div class="navLangFirst">
@@ -106,28 +108,28 @@
                 </div>
             </div>
             <div class="bannerText">
-                <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a style="color: #2162A1;">Click here to go to amazon.in</a></p>
+                <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="https://www.amazon.in" target="_blank" style="color: #2162A1;">Click here to go to amazon.in</a></p>
             </div>
             <div class="shoppingSection">
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Shop for your home essentials</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img11.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Cleaning Tools</div>
                             </div>
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img12.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home Storage</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img13.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home Decor</div>
                             </div>
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img14.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Bedding</div>
                             </div>
@@ -137,28 +139,30 @@
                 </div>
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Get your game on</p>
-                    <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img21.jpg);"></div>
-                    <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop gaming</p>
+                    <div class="categoryCard" style="height: 100%; width: 100%;">
+                        <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img21.jpg);"></div>
+                        <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop gaming</p>
+                    </div>
                 </div>
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Top categories in Kitchen appliances</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg311">
+                            <div class="innerSectionImg311 categoryCard">
                                 <img src="shoppingImg/img31.jpg" class="diffShoppingImge311">
                                 <div style="font-weight: 540; font-size: clamp(0rem, 1.2vw, 1rem);">Cooker</div>
                             </div>
                         </div>
                         <div class="innerSectionImg32">
-                            <div class="innerSectionImg312">
+                            <div class="innerSectionImg312 categoryCard">
                                 <img src="shoppingImg/img32.jpg" class="diffShoppingImges">
                                 <div style="font-weight: 540; font-size: clamp(0rem, 1.2vw, 0.9rem);">Coffee</div>
                             </div>
-                            <div class="innerSectionImg312">
+                            <div class="innerSectionImg312 categoryCard">
                                 <img src="shoppingImg/img33.jpg" class="diffShoppingImges">
                                 <div clas="potsFont" style="font-weight: 540; font-size: clamp(0rem, 1.2vw, 0.9rem);">Pots and Pans</div>
                             </div>
-                                <div class="innerSectionImg312">
+                                <div class="innerSectionImg312 categoryCard">
                                 <img src="shoppingImg/img34.jpg" class="diffShoppingImges">
                                 <div style="font-weight: 540; font-size: clamp(0rem, 1.2vw, 0.9rem);">Kettles</div>
                             </div>
@@ -170,21 +174,21 @@
                     <p class="shoppingSectionUpperFont">Refresh Your Space</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img42.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>
@@ -196,21 +200,21 @@
                     <p class="shoppingSectionUpperFont">Shop Fashion for less</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img51.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Jeans under $50</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img52.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Tops under $25</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img53.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dresses under $30</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img54.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Shoes under $50</div>
                             </div>
@@ -220,33 +224,37 @@
                 </div>
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Toys under $25</p>
-                    <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img61.jpg);"></div>
-                    <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop more</p>
+                    <div class="categoryCard" style="height: 100%; width: 100%;">
+                        <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img61.jpg);"></div>
+                        <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop more</p>
+                    </div>
                 </div>
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Get your game on</p>
-                    <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img71.jpg);"></div>
-                    <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop gaming</p>
+                    <div class="categoryCard" style="height: 100%; width: 100%;">
+                        <div class="innerSectionTotalImg" style="background-image: url(shoppingImg/img71.jpg);"></div>
+                        <p class="shoppingSectionMediumFont" style="color: #2162A1;">Shop gaming</p>
+                    </div>
                 </div>
                 <div class="shoppingSection1">
                     <p class="shoppingSectionUpperFont">Fashion trend you like</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img81.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dresses</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img82.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Knits</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img83.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Jackets</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img84.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Jewelry</div>
                             </div>
@@ -258,21 +266,21 @@
                     <p class="shoppingSectionUpperFont">Easy updates for elevated spaces</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img91.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Baskets & hampers</div>
                             </div>
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img92.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Hardware</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img93.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Accent furniture</div>
                             </div>
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img94.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Wallpaper & paint</div>
                             </div>
@@ -316,21 +324,21 @@
                     <p class="shoppingSectionUpperFont">Refresh Your Space</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img42.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>
@@ -342,21 +350,21 @@
                     <p class="shoppingSectionUpperFont">Easy updates for elevated spaces</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img91.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Baskets & hampers</div>
                             </div>
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img92.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Hardware</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img93.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Accent furniture</div>
                             </div>
-                            <div class="innerSectionImg1-911">
+                            <div class="innerSectionImg1-911 categoryCard">
                                 <img src="shoppingImg/img94.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Wallpaper & paint</div>
                             </div>
@@ -368,21 +376,21 @@
                     <p class="shoppingSectionUpperFont">Fashion trend you like</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img81.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dresses</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img82.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Knits</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img83.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Jackets</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img84.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Jewelry</div>
                             </div>
@@ -394,21 +402,21 @@
                     <p class="shoppingSectionUpperFont">Refresh Your Space</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img42.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>
@@ -452,21 +460,21 @@
                     <p class="shoppingSectionUpperFont">Refresh Your Space</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img42.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>
@@ -478,21 +486,21 @@
                     <p class="shoppingSectionUpperFont">Shop for your home essentials</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img11.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Cleaning Tools</div>
                             </div>
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img12.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home Storage</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img13.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home Decor</div>
                             </div>
-                            <div class="innerSectionImg111">
+                            <div class="innerSectionImg111 categoryCard">
                                 <img src="shoppingImg/img14.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Bedding</div>
                             </div>
@@ -504,21 +512,21 @@
                     <p class="shoppingSectionUpperFont">Easy updates for elevated spaces</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img91.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Baskets & hampers</div>
                             </div>
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img92.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Hardware</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img93.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Accent furniture</div>
                             </div>
-                            <div class="innerSectionImg911">
+                            <div class="innerSectionImg911 categoryCard">
                                 <img src="shoppingImg/img94.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Wallpaper & paint</div>
                             </div>
@@ -530,21 +538,21 @@
                     <p class="shoppingSectionUpperFont">Refresh Your Space</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img42.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>
@@ -588,21 +596,21 @@
                     <p class="shoppingSectionUpperFont">New home arrivals</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/kitchen.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen & Dinning</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/paint.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home improvement</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/decor.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Decor</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/bedding.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Bedding & Bath</div>
                             </div>
@@ -614,21 +622,21 @@
                     <p class="shoppingSectionUpperFont">Look your Best</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/her.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">For her</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/him.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">For him</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/teens.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">For teens</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/kids.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">For kids</div>
                             </div>
@@ -640,21 +648,21 @@
                     <p class="shoppingSectionUpperFont">Level up your Beauty</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/makeup.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Makeup</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/brushes.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Brushes</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/sponges.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Spomges</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/mirrors.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Mirrors</div>
                             </div>
@@ -666,21 +674,21 @@
                     <p class="shoppingSectionUpperFont">Level up your beauty</p>
                     <div class="innerSectionImg1">
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img41.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Dining</div>
                             </div>
                             <div class="innerSectionImg211">
-                                <img src="shoppingImg/img42.jpg" class="shoppingImges">
+                                <img src="shoppingImg/img42.jpg categoryCard" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Home</div>
                             </div>
                         </div>
                         <div class="innerSectionImg11">
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img43.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Kitchen</div>
                             </div>
-                            <div class="innerSectionImg211">
+                            <div class="innerSectionImg211 categoryCard">
                                 <img src="shoppingImg/img44.jpg" class="shoppingImges">
                                 <div class="shoppingSectionLowerFont">Health and Beauty</div>
                             </div>

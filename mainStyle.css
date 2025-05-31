@@ -132,6 +132,10 @@ body {
     font-size: clamp(0rem, 1.08vw, 0.7rem); 
 }
 
+.categoryCard {
+    cursor: pointer;
+}
+
 .innerSectionImg1 {
     margin-top: 1vw;
     margin-bottom: 1vw;
@@ -307,15 +311,14 @@ body {
 }
 
 .ProductMediumFont {
-    /* font-weight: 580; */
     font-weight: bold;
     font-size: clamp(0rem, 1.6vw, 1.1rem); 
 }
 
 .ProductLowererFont {
     color: rgb(59, 59, 59);
-    font-weight: 470;
-    font-size: clamp(0rem, 1.1vw, 0.9rem);
+    font-weight: 540;
+    font-size: clamp(0rem, 1.1vw, 0.7rem);
 }
 
 .searchPage {
@@ -374,5 +377,4 @@ body {
     background-color: #FFD814;
     color: black;
     border-radius: clamp(0rem, 2vw, 1.2rem);
-    color: orangered;
 }

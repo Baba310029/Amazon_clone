@@ -37,7 +37,7 @@ function setupBackgroundSlider() {
     });
 }
 
-function setupSearchInput() {
+function setupProductCards() {
     const main0 = document.querySelector('.main');
     const main1 = document.querySelector('.mainBanner');
     const searchPage = document.querySelector('.searchPage');
@@ -45,24 +45,11 @@ function setupSearchInput() {
     const result = document.querySelector(".result");
     const searchQuery = new URLSearchParams(window.location.search).get('q') || '';
 
-    if(!searchQuery) return asusual();
-
     function asusual(){
         main0.style.display = 'block';
         main1.style.display = 'block';
         searchPage.style.display= 'none';
     }
-
-    const input = document.getElementsByClassName('searchInput')[0];
-    input.value = searchQuery;
-    
-    fetch('products.json')
-        .then(res => res.json())
-        .then(products => showResults(products, searchQuery))
-        .catch(function (err) {
-            console.error(`Error loading products ${err}`);
-            resultContainer.innerText = 'Failed to load products.';
-        });
 
     function showResults(products, query) {
         resultContainer.innerHTML = '';
@@ -77,8 +64,8 @@ function setupSearchInput() {
             searchPage.style.display= 'block';
         }
 
-        if(filtered.length === '') {
-            resultContainer.innerText = 'No products found.';
+        if(filtered.length === 0) {
+            resultContainer.innerHTML = '<p class="ProductMediumFont" style="color : orangered;">No products found!</p>';
             return;
         }
         
@@ -117,12 +104,43 @@ function setupSearchInput() {
 
         return card;
     }
+
+    function fetchQuery(query){
+        fetch('products.json')
+        .then(res => res.json())
+        .then(products => showResults(products, query))
+        .catch(function (err) {
+            console.error(`Error loading products ${err}`);
+            resultContainer.innerText = 'Failed to load products.';
+        });
+    }
+
+    const input = document.getElementsByClassName('searchInput')[0];
+    input.value = searchQuery;
+
+    const categoryCards = document.querySelectorAll('.categoryCard');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            const categoryQuery = card.children[1].innerText;
+            const encoded = encodeURIComponent(categoryQuery);
+            window.location.href = `index.html?q=${encoded}`;
+        });
+        
+    })
+    
+    if(searchQuery) 
+        fetchQuery(searchQuery) 
+    else
+        return asusual();
+    
+   
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
     if(document.querySelector('.main').style.display !== 'none') setupBackgroundSlider() ;
-    setupSearchInput();
+    setupProductCards();
 });
 
 
