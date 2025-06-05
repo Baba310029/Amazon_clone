@@ -245,16 +245,6 @@ body {
     width: 100%;
 }
 
-/* @media (min-width: 1108px) {
-    .innerSectionImg311 {
-        height: 13rem;
-    }
-
-    .innerSectionImg312 {
-        height: 6rem;
-    }
-} */
-
 @media (min-width: 1200px) {
     .innerSectionImg311 {
         height: 11rem; 
@@ -302,6 +292,15 @@ body {
     max-height: clamp(0rem, 20vw, 11rem);
 }
 
+/*extra pages*/
+
+.extraPage {
+    height: auto;
+    width: 100%;
+    max-width: 1515px;
+    /* display: none; */
+}
+
 /*onSearch*/
 
 .ProductUpperFont {
@@ -311,8 +310,8 @@ body {
 }
 
 .ProductMediumFont {
-    font-weight: bold;
-    font-size: clamp(0rem, 1.6vw, 1.1rem); 
+    font-weight: 540;
+    font-size: clamp(0rem, 1.6vw, 0.9rem); 
 }
 
 .ProductLowererFont {
@@ -321,17 +320,10 @@ body {
     font-size: clamp(0rem, 1.1vw, 0.7rem);
 }
 
-.searchPage {
-    height: auto;
-    width: 100%;
-    max-width: 1515px;
-    display: none;
-}
-
 .searchProductDisplay {
     padding: 1.5vw;
     display: grid;
-    gap: clamp(0rem, 1.3vw, 1.9rem);
+    gap: clamp(0rem, 1vw, 0.4rem);
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -348,14 +340,24 @@ body {
 }
 
 .productCard {
-    border: 2px solid rgb(230, 230, 230);
+    border: 1.5px solid rgb(246, 246, 246);
     border-radius: 0.5vw;
 }
 
 .product-image {
     width: 100%;
     height: auto;
+    max-height: 13rem;
 }
+
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;     /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .innerProductCard {
     padding: 0.5vw;
@@ -377,4 +379,192 @@ body {
     background-color: #FFD814;
     color: black;
     border-radius: clamp(0rem, 2vw, 1.2rem);
+}
+
+
+/* cartPage */
+
+.cartUpperFont {
+    font-weight: bold;
+    font-size: clamp(0rem, 2.2vw, 1.8rem);
+}
+
+.cartMediumFont {
+    font-weight: 500;
+    font-size: clamp(0rem, 1.5vw, 0.8rem); 
+}
+
+.cartLowerFont {
+    font-weight: 500;
+    font-size: clamp(0rem, 1.2vw, 0.7rem);
+}
+
+#cartPage {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: clamp(0rem, 1.5vw, 1rem);
+    gap: clamp(0rem, 2.2vw, 0.9rem);
+}
+
+.outerCartItems {
+    background-color: white;
+    min-height: clamp(0rem, 13vw, 7rem);
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0rem, 1vw, 0.9rem);
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cartItemCard {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 2px solid rgb(239, 238, 238);
+    display: flex;
+    gap: clamp(0rem, 1.4vw, 1.2rem);
+    align-items: center;
+}
+
+.outerImageDiv {
+    width: clamp(0rem, 20vw, 12rem);
+}
+
+#itemImage {
+    max-width: 100%;
+    
+}
+
+.content {
+    flex: 1;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#upperLeft {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0rem, 0.5vw, 0.3rem);
+    padding-right: clamp(0rem, 1vw, 1.2rem);
+}
+
+.giftLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  line-height: 1;
+}
+
+.giftLabel input {
+    width: clamp(0.2rem, 1vw, 1rem);
+    height: clamp(0.2rem, 1vw, 1rem);
+}
+
+.bottom {
+    font-weight: 600;
+    font-size: clamp(0rem, 1.7vw, 1.3rem);
+    margin-top: 1vw; 
+    display: flex;
+    align-items: center;
+}
+
+.quantityButton {
+    border: clamp(0rem, 0.5vw, 2.5px) solid #FFD814;
+    border-radius: 2vw;
+    display: flex;
+    width: clamp(0rem, 8vw, 6rem);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(0rem, 1vw, 0.5rem);
+    margin-right: clamp(0rem, 1.5vw, 0.7rem);
+}
+
+.quantityButton button {
+    all: unset;
+    cursor: pointer;
+}
+
+#delete img {
+    width: clamp(0rem, 1vw, 1rem);
+    height: clamp(0rem, 1vw, 1rem);
+}
+
+.bottom p {
+    padding: 0 clamp(0rem, 1.5vw, 0.7rem);
+    border-left: 2px solid rgb(213, 213, 213);
+    color: #2162A1;
+}
+
+.cartTotal {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0rem, 2.2vw, 0.9rem);
+}
+
+.subtotal {
+    background-color: white;
+    padding: clamp(0rem, 2vw, 2rem) clamp(0rem, 1.4vw, 1.2rem);
+    width: clamp(0rem, 28vw, 18rem);
+}
+
+#checkBox {
+    display: flex;
+    gap: 0.3vw;
+    align-items: center;
+    margin-top: clamp(0rem, 0.5vw, 0.2rem);
+    margin-bottom: clamp(0rem, 1.3vw, 0.8rem);
+}
+
+.subtotal form {
+    background-color: #FFD814;
+    text-align: center;
+    padding: clamp(0rem, 1vw, 0.6rem);
+    border-radius: 3vw;
+    margin-top: clamp(0rem, 1.5vw, 0.5rem);
+}
+
+.prime {
+    background-color: white;
+    width: clamp(0rem, 28vw, 18rem);
+    border-radius: clamp(0rem, 1vw, 0.6rem);
+    display: flex;
+    padding: clamp(0rem, 1.4vw, 1.2rem);
+    gap: clamp(0rem, 1.4vw, 1.2rem);
+}
+
+.primeLogo {
+    border-radius: inherit;
+    width: clamp(0rem, 6vw, 3rem);
+}
+
+.totalText {
+    flex: 1;
+}
+
+.totalText form {
+    border: 2px solid rgb(211, 211, 211);
+    width: fit-content;
+    padding: clamp(0rem, 0.5vw, 0.3rem) clamp(0rem, 1vw, 0.6rem);
+    border-radius: 3vw;
+    margin-top: clamp(0rem, 1.5vw, 0.5rem);
+}
+
+@media (min-width: 1000px) {
+    #cartPage {
+        flex-direction: row;
+    }
+
+    .cartItems {
+        height: auto;
+        flex: 1;
+    }
 }

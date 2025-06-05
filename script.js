@@ -1,4 +1,39 @@
 const body = document.body;
+const outerMain = document.querySelector('.outerMain');
+const itemCount = document.getElementsByClassName('navCartItems')[0];
+
+// let cart = [{
+//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
+//     price: 99.99,
+//     quantity: 1,
+//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"},
+//     {
+//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
+//     price: 99.99,
+//     quantity: 1,
+//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"},
+// {
+//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
+//     price: 99.99,
+//     quantity: 1,
+//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"}
+// ];
+let cart = [];
+
+function updateCartCounter(){
+    const cartCount = document.querySelector('.navCartItems');
+    cartCount.innerText = cart.reduce( (sum, item) =>
+        sum + item.quantity
+    , 0);
+}
+
+function loadInitialCart() {
+    const storedCart = JSON.parse(localStorage.getItem('cart'));
+    if (storedCart && Array.isArray(storedCart)) {
+        cart = storedCart;
+    }
+    updateCartCounter();
+}
 
 function setupBackgroundSlider() {
     const backgroundImages = [
@@ -40,7 +75,7 @@ function setupBackgroundSlider() {
 function setupProductCards() {
     const main0 = document.querySelector('.main');
     const main1 = document.querySelector('.mainBanner');
-    const searchPage = document.querySelector('.searchPage');
+    const searchPage = document.querySelector('#searchPage');
     const resultContainer = document.querySelector(".searchProductDisplay");
     const result = document.querySelector(".result");
     const searchQuery = new URLSearchParams(window.location.search).get('q') || '';
@@ -126,7 +161,7 @@ function setupProductCards() {
             window.location.href = `index.html?q=${encoded}`;
         });
         
-    })
+    });
     
     if(searchQuery) 
         fetchQuery(searchQuery) 
@@ -136,15 +171,215 @@ function setupProductCards() {
    
 }
 
+function setupCart(){
+    function createCartItemCard(product){
+        const card = document.createElement('div');
+        card.className = 'cartItemCard';
+        card.innerHTML = `
+            <input type="checkbox" class="itemSelectionCheckBox">
+            <div class='outerImageDiv'><img src="${product.image}" alt="${product.title}" id="itemImage"></div>
+            <div class="content">
+                <div class="upper">
+                    <div id="upperLeft">
+                        <p class="cartMediumFont">${product.title}</p>
+                        <p class="cartLowerFont" style="color: #2162A1">In Stock</p>
+                        <div id="Checkbox">
+                            <label class="giftLabel">
+                                <input type="checkbox" />
+                                <span class="cartLowerFont">This is a gift</span>
+                            </label>
+                        </div>
+                        <p class="cartLowerFont"><span style="font-weight: bold;">Size: </span><span> xxxxx</span></p>
+                        <p class="cartLowerFont"><span style="font-weight: bold;">Style: </span><span> xxxxx</span></p>
+                    </div>
+                    <div class="cartMediumFont" id="upperRight">$${product.price}</div>
+                </div>
+                <div class="bottom">
+                    <div class="quantityButton">
+                        <button class="cartMediumFont" id="delete"><img src="mainItems/del.png" alt="Delete"></button>
+                        <button id="decrease"><h4 class="increaseClass">-</h4></button>
+                        <h4 class="cartMediumFont" id="cardQuantity">${product.quantity}</h4>
+                        <button id="increase"><h4 class="increaseClass">+</h4></button>
+                    </div>
+                    <p class="cartLowerFont">Delete</p>
+                    <p class="cartLowerFont">Save for later</p>
+                    <p class="cartLowerFont">Compare with similar items</p>
+                    <p class="cartLowerFont">Share</p>
+                </div>
+            </div>
+        `;
+        return card;
+    }
+
+    document.addEventListener('click', function(e){
+        if(e.target.classList.contains('add-to-cart')){
+            const productCard = e.target.closest('.productCard');
+            const title = productCard.querySelector('.product-title').innerText;
+            const price = parseFloat(productCard.querySelector('.current-price').innerText.replace('$', ''));
+            const image = productCard.querySelector('.product-image').src;
+
+            const existing = cart.find(p => p.title === title);
+            if(!existing)
+                cart.push({title, price, image, quantity: 1});
+            else
+                existing.quantity += 1;
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCounter();
+        }
+    });
+
+    const cartDiv = document.getElementById('navCart');
+    const cartPage = document.querySelector('#cartPage');
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    function createCartPage(){
+        const defaultCart = document.createElement('div');
+        defaultCart.className = 'extraPage';
+        defaultCart.id = 'cartPage';
+        
+        defaultCart.innerHTML = `
+            <div class="outerCartItems">
+                <div class="cartItems">
+                    <h2 class="cartUpperFont" style="margin-bottom: clamp(0rem, 1.5vw, 0.5rem);">Your Amazon Cart is empty</h2>
+                    <p class="cartMediumFont">Your Shopping Cart lives to serve. Give it purpose — fill it with groceries, clothing, household supplies, electronics, and more.
+                    Continue shopping on the <span style="color: #2162A1;">Amazon.com homepage</span>, learn about <span style="color: #2162A1;">today's deals</span>, or visit your <span style="color: #2162A1;">Wish List</span>.</p>
+                </div>
+            </div>
+            <div class="cartTotal">
+                <div class="subtotal">
+                    <p style=" font-size: clamp(0rem, 1.8vw, 1.4rem); font-weight: 500;">Subtotal (${itemCount.innerText} item): <span id="subtotalCost" style="font-weight: bold;">$${total.toFixed(2)}</span></p>
+                    <div id="checkBox">
+                        <input type="checkbox" style="width: clamp(0rem, 1.4vw, 0.8rem);">
+                        <p  class="cartLowerFont">This order contains a gift</p>
+                    </div>
+                    <form class="cartLowerFont">Proceed to checkout</form>
+                </div>
+                <div class="prime">
+                    <div class="primeLogo">
+                        <img src="mainItems/primeLogo.svg" >
+                    </div>
+                    <div class="totalText">
+                        <p class="cartMediumFont" style="font-weight: bold;">Free fast delivery. No order minimum. Exclusive savings. Start your 30-day free trial of Prime.</p>
+                        <form class="cartLowerFont">Join Prime</form>
+                    </div>
+                </div>
+            </div>
+            `;
+
+        return defaultCart;
+    }
+
+    cartDiv.addEventListener('click', (e) => {
+        const cartQuery = encodeURIComponent('queryClicked');
+        window.location.href = `index.html?q=${cartQuery}`;
+        outerMain.innerHTML = '';
+    })
+
+
+
+    if(new URLSearchParams(window.location.search).get('q') === 'queryClicked') {
+        document.querySelector('.searchInput').value = '';
+        outerMain.innerHTML = ''
+        
+        updateCartCounter();
+        const defaultCartDiv = createCartPage();
+        outerMain.appendChild(defaultCartDiv);
+
+        window.history.replaceState({}, document.title, 'index.html');
+
+        const subtotalDiv = document.querySelector('.subtotal');
+        const outerCartItems = document.querySelector('.outerCartItems')
+        if(cart.length === 0) 
+            subtotalDiv.style.display = 'none';
+        else{
+            outerCartItems.innerHTML = `
+                <p class="cartUpperFont">Shopping Cart</p>
+                <p class="cartLowerFont" style="color: #2162A1">Deselect all items</p>
+                <p class="cartMediumFont" style="text-align: end; padding-bottom: 0.4vw; padding-right: 0.6vw; border-bottom: 2px solid rgb(239, 238, 238); color: #2162A1">price</p>
+                <div class="cartItems"></div>
+                <p class="cartMediumFont" style="text-align: end;">Subtotal (${itemCount.innerText} items): <span style="font-weight: bold;">$${total.toFixed(2)}</span></p>
+            `;
+            const cartItems = document.querySelector('.cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach((product) => {
+                const card = createCartItemCard(product);
+                cartItems.appendChild(card);
+            })
+        }
+
+        const selectionCheckBox = document.querySelectorAll('.itemSelectionCheckBox')
+        selectionCheckBox.forEach((slot) => slot.checked = true)
+
+        const deleteButton = document.querySelectorAll('#delete');
+        deleteButton.forEach(button => button.style.display = 'none');
+        const decreaseButton = document.querySelectorAll('#decrease');
+        const increaseButton = document.querySelectorAll('#increase');
+        const cartItemCard = document.querySelectorAll('.cartItemCard');
+        // console.log(cartItemCard)[0];
+
+        cartItemCard.forEach( card => {
+            const cardQuantity = card.querySelector('#cardQuantity');
+            if(cardQuantity.innerText === '1') {
+                card.querySelector('#delete').style.display = 'block';
+                card.querySelector('#decrease').style.display = 'none';
+            };
+        })
+
+        document.addEventListener('click', e => {
+            if(e.target.alt === 'Delete'){
+                const nearItemCard = e.target.closest('.cartItemCard');
+                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
+
+                cart = cart.filter(item => item.title !== title);
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload();
+            }
+            if (e.target.innerText === '+') {
+                const nearItemCard = e.target.closest('.cartItemCard');
+                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
+
+                const item = cart.find(p => p.title === title);
+                if(item) {
+                    item.quantity += 1;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    location.reload();
+                }
+            }
+            if (e.target.innerText === '-') {
+                const nearItemCard = e.target.closest('.cartItemCard');
+                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
+
+                const item = cart.find(p => p.title === title);
+                if(item) {
+                    if(item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(p => p.title !== title);
+                    }
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    location.reload();
+                }
+            }
+        })
+        
+    };
+    
+    
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
+    const main = document.querySelector('.main');
 
-    if(document.querySelector('.main').style.display !== 'none') setupBackgroundSlider() ;
-    setupProductCards();
+    loadInitialCart();
+    if(main.style.display !== 'none') setupBackgroundSlider();
+    if(new URLSearchParams(window.location.search).get('q') !== 'queryClicked') setupProductCards();
+    setupCart();
+
 });
-
-
-
 
 
 
