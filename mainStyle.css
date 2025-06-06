@@ -413,6 +413,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: clamp(0rem, 1vw, 0.9rem);
+    flex: 1;
 }
 
 .cartItems {

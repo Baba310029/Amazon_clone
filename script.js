@@ -2,29 +2,26 @@ const body = document.body;
 const outerMain = document.querySelector('.outerMain');
 const itemCount = document.getElementsByClassName('navCartItems')[0];
 
-// let cart = [{
-//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
-//     price: 99.99,
-//     quantity: 1,
-//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"},
-//     {
-//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
-//     price: 99.99,
-//     quantity: 1,
-//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"},
-// {
-//     image: "http://127.0.0.1:5500/NewAmazonClone/products/product09",
-//     price: 99.99,
-//     quantity: 1,
-//     title: "Bedding Acer 23.8\" Full HD IPS Zero Frame Monitor"}
-// ];
 let cart = [];
 
 function updateCartCounter(){
     const cartCount = document.querySelector('.navCartItems');
-    cartCount.innerText = cart.reduce( (sum, item) =>
-        sum + item.quantity
-    , 0);
+    const cards = document.querySelectorAll('.cartItemCard');
+    let count = 0;
+
+    if(cards.length > 0) {
+        cards.forEach(card => {
+            console.log('hii')
+            const checkbox = card.querySelector('.itemSelectionCheckBox');
+            if(checkbox && checkbox.checked){
+                const title = card.querySelector('.cartMediumFont').innerText;
+                const product = cart.find(p => p.title === title);
+                if(product) count += product.quantity;
+            }
+        });
+    }else
+        cart.forEach(p => count += p.quantity);
+    cartCount.innerText = count;
 }
 
 function loadInitialCart() {
@@ -176,7 +173,7 @@ function setupCart(){
         const card = document.createElement('div');
         card.className = 'cartItemCard';
         card.innerHTML = `
-            <input type="checkbox" class="itemSelectionCheckBox">
+            <input type="checkbox" class="itemSelectionCheckBox" ${product.selected ? 'checked' : ''}>
             <div class='outerImageDiv'><img src="${product.image}" alt="${product.title}" id="itemImage"></div>
             <div class="content">
                 <div class="upper">
@@ -192,7 +189,7 @@ function setupCart(){
                         <p class="cartLowerFont"><span style="font-weight: bold;">Size: </span><span> xxxxx</span></p>
                         <p class="cartLowerFont"><span style="font-weight: bold;">Style: </span><span> xxxxx</span></p>
                     </div>
-                    <div class="cartMediumFont" id="upperRight">$${product.price}</div>
+                    <div class="cartMediumFont" id="upperRight">$${product.price * product.quantity}</div>
                 </div>
                 <div class="bottom">
                     <div class="quantityButton">
@@ -220,7 +217,7 @@ function setupCart(){
 
             const existing = cart.find(p => p.title === title);
             if(!existing)
-                cart.push({title, price, image, quantity: 1});
+                cart.push({title, price, image, quantity: 1, selected: true});
             else
                 existing.quantity += 1;
 
@@ -248,7 +245,7 @@ function setupCart(){
             </div>
             <div class="cartTotal">
                 <div class="subtotal">
-                    <p style=" font-size: clamp(0rem, 1.8vw, 1.4rem); font-weight: 500;">Subtotal (${itemCount.innerText} item): <span id="subtotalCost" style="font-weight: bold;">$${total.toFixed(2)}</span></p>
+                    <p id='itemCount' style=" font-size: clamp(0rem, 1.8vw, 1.4rem); font-weight: 500;">Subtotal (${itemCount.innerText} item): <span id="subtotalCost" style="font-weight: bold;">$${total.toFixed(2)}</span></p>
                     <div id="checkBox">
                         <input type="checkbox" style="width: clamp(0rem, 1.4vw, 0.8rem);">
                         <p  class="cartLowerFont">This order contains a gift</p>
@@ -282,11 +279,43 @@ function setupCart(){
         document.querySelector('.searchInput').value = '';
         outerMain.innerHTML = ''
         
-        updateCartCounter();
         const defaultCartDiv = createCartPage();
         outerMain.appendChild(defaultCartDiv);
 
         window.history.replaceState({}, document.title, 'index.html');
+
+
+        function updateSubtotal(){
+            const subtotalCost = document.querySelectorAll('#subtotalCost');
+            const itemCountText = document.querySelectorAll('#itemCount');
+
+            const cards = document.querySelectorAll('.cartItemCard');
+            let total = 0;
+            let itemCount = 0;
+
+            cards.forEach(card => {
+                const checkbox = card.querySelector('.itemSelectionCheckBox');
+                if(!checkbox || !checkbox.checked) return;
+
+                const title = card.querySelector('.cartMediumFont').innerText;
+                const product = cart.find(p => p.title === title);
+
+                if (product) {
+                    total += product.price * product.quantity;
+                    itemCount += product.quantity;
+                }
+            })
+            if(subtotalCost) {
+                subtotalCost.forEach(item => {
+                    item.innerText = `$${total.toFixed(2)}`;
+                });
+            }
+            if(itemCountText) {
+                itemCountText.forEach(item => {
+                    item.innerHTML = `Subtotal (${itemCount} items): <span style="font-weight: bold;">$${total.toFixed(2)}</span>`;
+                });
+            } 
+        }      
 
         const subtotalDiv = document.querySelector('.subtotal');
         const outerCartItems = document.querySelector('.outerCartItems')
@@ -298,25 +327,37 @@ function setupCart(){
                 <p class="cartLowerFont" style="color: #2162A1">Deselect all items</p>
                 <p class="cartMediumFont" style="text-align: end; padding-bottom: 0.4vw; padding-right: 0.6vw; border-bottom: 2px solid rgb(239, 238, 238); color: #2162A1">price</p>
                 <div class="cartItems"></div>
-                <p class="cartMediumFont" style="text-align: end;">Subtotal (${itemCount.innerText} items): <span style="font-weight: bold;">$${total.toFixed(2)}</span></p>
+                <p class="cartMediumFont" id="itemCount" style="text-align: end;">Subtotal (${itemCount.innerText} items): <span id="subtotalCost" style="font-weight: bold;">$${total.toFixed(2)}</span></p>
             `;
             const cartItems = document.querySelector('.cartItems');
             cartItems.innerHTML = '';
             cart.forEach((product) => {
                 const card = createCartItemCard(product);
                 cartItems.appendChild(card);
-            })
+            });
+            updateCartCounter();
+            updateSubtotal();
         }
 
-        const selectionCheckBox = document.querySelectorAll('.itemSelectionCheckBox')
-        selectionCheckBox.forEach((slot) => slot.checked = true)
+        document.addEventListener('change', e => {
+            if (e.target.classList.contains('itemSelectionCheckBox')) {
+                const checkbox = event.target;
+                const card = checkbox.closest('.cartItemCard');
+                const title = card.querySelector('.cartMediumFont').innerText;
+
+                const productInCart = cart.find(p => p.title === title);
+                if (productInCart) {
+                    productInCart.selected = checkbox.checked;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+                updateCartCounter();
+                updateSubtotal();
+            }
+        });
 
         const deleteButton = document.querySelectorAll('#delete');
         deleteButton.forEach(button => button.style.display = 'none');
-        const decreaseButton = document.querySelectorAll('#decrease');
-        const increaseButton = document.querySelectorAll('#increase');
         const cartItemCard = document.querySelectorAll('.cartItemCard');
-        // console.log(cartItemCard)[0];
 
         cartItemCard.forEach( card => {
             const cardQuantity = card.querySelector('#cardQuantity');
@@ -327,45 +368,39 @@ function setupCart(){
         })
 
         document.addEventListener('click', e => {
-            if(e.target.alt === 'Delete'){
-                const nearItemCard = e.target.closest('.cartItemCard');
-                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
+            const card = e.target.closest('.cartItemCard');
+            if (!card) return;
 
-                cart = cart.filter(item => item.title !== title);
-                
-                localStorage.setItem('cart', JSON.stringify(cart));
-                location.reload();
+            const title = card.querySelector('.cartMediumFont').innerText;
+            
+
+            const itemIndex = cart.findIndex(p => p.title === title);
+            if (itemIndex === -1) return;
+
+            const product = cart[itemIndex];
+
+            if (e.target.alt === 'Delete') {
+                cart.splice(itemIndex, 1);
             }
+
             if (e.target.innerText === '+') {
-                const nearItemCard = e.target.closest('.cartItemCard');
-                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
-
-                const item = cart.find(p => p.title === title);
-                if(item) {
-                    item.quantity += 1;
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    location.reload();
-                }
+                product.quantity += 1;
             }
+
             if (e.target.innerText === '-') {
-                const nearItemCard = e.target.closest('.cartItemCard');
-                const title = nearItemCard.querySelector('.cartMediumFont').innerText;
-
-                const item = cart.find(p => p.title === title);
-                if(item) {
-                    if(item.quantity > 1) {
-                        item.quantity -= 1;
-                    } else {
-                        cart = cart.filter(p => p.title !== title);
-                    }
-
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    location.reload();
+                if (product.quantity === 1) {
+                    cart.splice(itemIndex, 1);
+                } else {
+                    product.quantity -= 1;
                 }
             }
-        })
-        
-    };
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = `index.html?q=queryClicked`;
+        });
+
+
+    }
     
     
 }
