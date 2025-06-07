@@ -405,15 +405,119 @@ function setupCart(){
     
 }
 
+function setUpLoginPage(){
+    function createEmailLoginPage(){
+        const OuterDiv = document.createElement('div');
+        OuterDiv.className = 'OuterDiv';
+        OuterDiv.innerHTML = `
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="logo" width="100">
+            <div class="innerLoginDiv">
+                <h1 class="loginUpperFont">Sign in or create account</h1>
+                <form>
+                    <label for="email" class="loginMediumFont" style="font-weight: 600;">Enter mobile number or email</label>
+                    <input class="loginMediumFont" type="text" id="email" name="email" spellcheck="true" required />
+                    <p id="errorMsg" class="errorText hidden"></p>
+                    <button class="loginMediumFont" id="continue-btn" type="submit">Continue</button>
+                </form>
+                <p class="loginMediumFont" id="terms">
+                    By continuing, you agree to Amazon's 
+                    <a href="#">Conditions of Use</a> and 
+                    <a href="#">Privacy Notice</a>.
+                </p>
+                <a class="loginMediumFont" href="#" id="removeUnderline">Need help?</a>
+
+                <hr id="innerHr"/>
+
+                <p class="loginMediumFont"><strong>Buying for work?</strong></p>
+                <a href="#" class="loginMediumFont" id="business-link" style="text-decoration: none;">Create a free business account</a>
+            </div>
+            <hr id="OuterHr"/>
+            <div class="loginMediumFont" id="emailConditions">
+                <div id="insideConditions">
+                    <a href="#" id="removeUnderline">Conditions of Use</a>
+                    <a href="#" id="removeUnderline">Privacy Notice</a>
+                    <a href="#" id="removeUnderline">Help</a><br><br>
+                </div>
+                <p class="emailCopyRight">© 1996-2025, Amazon.com, Inc. or its affiliates</p>
+            </div>
+            `;
+        return OuterDiv;
+    }
+
+    const mainPageSignInButton = document.querySelector('#navSignin');
+
+    mainPageSignInButton.addEventListener('click', e => {
+        body.innerHTML = '';
+        body.style.backgroundColor = 'white';
+        const div = createEmailLoginPage();
+        body.appendChild(div);
+
+
+        const input = document.getElementById('email');
+        const form = document.querySelector('.innerLoginDiv').querySelector('form');
+        const continueBtn = document.getElementById('continue-btn');
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const mobileRegex = /^[6-9]\d{9}$/;
+
+        function isValidInput(value) {
+            return emailRegex.test(value) || mobileRegex.test(value);
+        }
+
+        const saved = localStorage.getItem('userCredential');
+        if(saved)
+            input.value = saved;
+
+        const clearBtn = document.createElement('i');
+        clearBtn.className = 'fa-solid fa-xmark clearBtn';
+        clearBtn.style.display = 'none';
+        clearBtn.style.userSelect = 'none';
+        
+        input.parentElement.appendChild(clearBtn);
+
+        clearBtn.addEventListener('click', () => {
+            input.value = '';
+            clearBtn.style.display = 'none';
+            input.classList.remove('invalid');
+        });
+
+        input.addEventListener('input', () => {
+            const value = input.value.trim();
+
+            clearBtn.style.display = value ? 'block' : 'none';
+
+            if(value == '' || isValidInput(value)){
+                input.classList.remove('invalid');
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const value = input.value.trim();
+
+            if(isValidInput(value)){
+                localStorage.setItem('userCredential', value);
+                input.classList.remove('invalid');
+                errorMsg.classList.add('hidden');
+                errorMsg.innerHTML = '';
+            }else{
+                input.classList.add('invalid');
+                 errorMsg.classList.remove('hidden');
+                errorMsg.innerHTML = `<i class="fas fa-exclamation-circle"></i> <p class="loginMediumFont">Invalid email address</p>`;
+            }
+        })
+
+    })
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector('.main');
 
+    setUpLoginPage();
     loadInitialCart();
     if(main.style.display !== 'none') setupBackgroundSlider();
     if(new URLSearchParams(window.location.search).get('q') !== 'queryClicked') setupProductCards();
     setupCart();
-
 });
 
 
